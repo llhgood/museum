@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <link rel="stylesheet" href="../static/js/bootstrap-3.4.1-dist/css/bootstrap.css">
+    <style>
+        .all{
+            margin-left: 10px;
+            width: 1000px;
+            height: 800px;
+        }
+        .Order
+        {
+            width: 300px;
+            height: 140px;
+            float: left;
+            margin-left: 20px;
+            {#background: slategray;#}
+        }
+        .total
+        {
+            width: 300px;
+            height: 140px;
+            float: left;
+            margin-left: 20px;
+           {#background: slategray;#}
+        }
+
+    </style>
+</head>
+<body>
+<div class="all">
+    <div class="Order" >
+        <div class="alert alert-success" role="alert">
+            <h2 style="margin-left:40px">总预约人数：</h2>
+            <h2 style="margin-left: 40px">{{ Order_count }}</h2>
+
+        </div>
+    </div>
+    <div class="total">
+        <div class="alert alert-info" role="alert">
+            <h2 style="margin-left:40px">总来访人数：</h2>
+            <h2 style="margin-left: 40px">{{ Visitor_count }}</h2>
+        </div>
+    </div>
+
+
+</div>
+</body>
+</html>

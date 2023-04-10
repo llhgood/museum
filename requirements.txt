@@ -1,0 +1,4 @@
+Django==3.2.12
+mysqlclient
+django-simpleui
+django-import-export

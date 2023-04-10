@@ -1,0 +1,36 @@
+version: "3"
+services:
+  python:
+    restart: always
+    environment:
+      LANG: C.UTF-8
+    build: .
+    image: docker_django:v1
+    container_name: django
+    ports:
+      - 8091:8089
+    volumes:
+      - .:/var/www/html/mysite
+    depends_on:
+      - db
+    networks:
+      - db_network
+  db:
+    image: mysql:5.7
+    environment:
+      LANG: C.UTF-8
+      MYSQL_ROOT_PASSWORD: 362413l.
+      MYSQL_ALLOW_EMPTY_PASSWORD: true
+      MYSQL_DATABASE: django_workers
+    container_name: mysql
+    restart: always
+    networks:
+      - db_network
+    ports:
+      - 3315:3306
+    privileged: true
+    command: --character-set-server=utf8mb4
+
+networks:
+  db_network:
+    driver: bridge
